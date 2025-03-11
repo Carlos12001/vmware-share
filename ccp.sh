@@ -3,7 +3,7 @@
 ############################################
 # EDIT THIS VARIABLE TO CHANGE THE PATH   #
 ############################################
-REPO_DIR=""
+REPO_DIR="/mnt/vol_NFS_rh003/estudiantes/cmata/vmware-share"
 FILE="$REPO_DIR/information.txt"
 SEPARATOR="===================================="
 
