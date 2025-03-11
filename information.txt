@@ -1,0 +1,27 @@
+[cmata@redhat003 ~]$ ccp
+Usage: /mnt/vol_NFS_rh003/estudiantes/cmata/vmware-share/ccp {push <text> | pop | send [message] | last | check <n> | size | clear}
+[cmata@redhat003 ~]$ cpp send feat: create information.txt
+cpp: error: send: No such file or directory
+cpp: warning: ‘-x c’ after last input file has no effect
+cpp: fatal error: no input files
+compilation terminated.
+[cmata@redhat003 ~]$ cpp send feat: create information.txt
+cpp: error: send: No such file or directory
+cpp: warning: ‘-x c’ after last input file has no effect
+cpp: fatal error: no input files
+compilation terminated.
+[cmata@redhat003 ~]$ ccp send feat: create information.txt
+[master 11e6bae] feat: create information.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 information.txt
+Warning: Permanently added the ECDSA host key for IP address '140.82.114.3' to the list of known hosts.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 98.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Carlos12001/vmware-share.git
+   2cb8dc2..11e6bae  master -> master
+[cmata@redhat003 ~]$ 
+
