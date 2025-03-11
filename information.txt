@@ -1,3 +1,4 @@
+HOLA SOY EL ULTIMO MENSAJE
 [cmata@redhat003 ~]$ ccp
 Usage: /mnt/vol_NFS_rh003/estudiantes/cmata/vmware-share/ccp {push <text> | pop | send [message] | last | check <n> | size | clear}
 [cmata@redhat003 ~]$ cpp send feat: create information.txt
