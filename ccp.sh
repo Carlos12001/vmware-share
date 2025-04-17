@@ -1,91 +1,106 @@
 #!/bin/bash
+###############################################################################
+# CCP (Copy‑Commit‑Push) utility                                              #
+#                                                                             #
+# This version stores the stack directly into README.md using Markdown:       #
+#   * Each entry is wrapped as a code block                                   #
+#   * Every entry starts with a level‑2 header containing the timestamp       #
+#   * Entries are separated internally by an HTML comment that Markdown       #
+#     ignores, so README renders cleanly while awk can still split sections   #
+#                                                                             #
+# All comments are intentionally written in English, as requested.            #
+###############################################################################
 
-############################################
-# EDIT THIS VARIABLE TO CHANGE THE PATH   #
-############################################
+###############################################################################
+# Repository path (edit here only if you move the repo)                       #
+###############################################################################
 REPO_DIR="/mnt/vol_NFS_rh003/estudiantes/cmata/vmware-share"
-FILE="$REPO_DIR/information.txt"
-SEPARATOR="===================================="
-
-# Create the file if it does not exist
-touch "$FILE"
+FILE="${REPO_DIR}/README.md"
 
 ###############################################################################
-# Functions                                                                   #
+# Internal separator used by awk – invisible to Markdown                      #
 ###############################################################################
+SEPARATOR="<!--CCP_SEPARATOR-->"
 
-# ccp push <text>  
-# Inserts <text> at the FIRST LINE of 'information.txt' (top of the stack).
+# Create README.md if it does not exist
+[ -f "$FILE" ] || touch "$FILE"
+
+###############################################################################
+# ccp push <text> or  some_command | ccp push                                 #
+# Prepends a Markdown block to README.md                                      #
+###############################################################################
 ccp_push() {
-  # Check if input is coming from a pipe (stdin)
+  # Capture input either from pipe (stdin) or from CLI arguments
   if [ ! -t 0 ]; then
     INPUT=$(cat)
   else
     INPUT="$*"
   fi
 
-  # Prepend the new message to the top of the stack file
-  echo -e "\n$SEPARATOR\n$INPUT\n$SEPARATOR\n" | cat - "$FILE" > "$FILE.tmp"
-  mv "$FILE.tmp" "$FILE"
+  # Timestamp for the header
+  TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+
+  # Build the Markdown block to prepend
+  NEW_BLOCK=$'\n'"${SEPARATOR}"$'\n\n'"## ${TIMESTAMP}"$'\n\n```bash\n'"${INPUT}"$'\n```'$'\n'
+
+  # Prepend to README.md
+  printf "%s" "${NEW_BLOCK}" | cat - "$FILE" > "${FILE}.tmp"
+  mv "${FILE}.tmp" "${FILE}"
 }
 
-
-# ccp pop
-# Displays and removes the FIRST LINE from the file (the most recent element).
+###############################################################################
+# ccp pop – show and remove the most recent entry                             #
+###############################################################################
 ccp_pop() {
-  # Display the first section
-  awk -v RS="$SEPARATOR" 'NR==2 {print $0}' "$FILE"
-  # Remove the first section
-  awk -v RS="$SEPARATOR" 'NR>2 {print $0 RS}' "$FILE" > "$FILE.tmp"
-  mv "$FILE.tmp" "$FILE"
+  awk -v RS="${SEPARATOR}" 'NR==2 {print $0}' "$FILE"
+  awk -v RS="${SEPARATOR}" 'NR>2  {print $0 RS}' "$FILE" > "${FILE}.tmp"
+  mv "${FILE}.tmp" "${FILE}"
 }
 
-# ccp send <commit_message>
-# Performs a real git add, commit, and push inside $REPO_DIR
+###############################################################################
+# ccp send <commit message> – git add/commit/push README.md                   #
+###############################################################################
 ccp_send() {
   COMMIT_MSG="$*"
-  # Default message if none is provided using Conventional Commits format
-  [ -z "$COMMIT_MSG" ] && COMMIT_MSG="chore: update information.txt"
+  [ -z "$COMMIT_MSG" ] && COMMIT_MSG="docs: update README log"
 
-  # Change to the repository directory
   cd "$REPO_DIR" || exit 1
-
-  # Add the file, commit, and push
-  git add "information.txt"
+  git add "README.md"
   git commit -m "$COMMIT_MSG"
   git push
 }
 
-# ccp check n
-# If no argument is provided, defaults to 0 => last push
-# check 0 => last push, check 1 => second to last, etc.
+###############################################################################
+# ccp check [n] – print the nth most recent entry (0 = latest)                #
+###############################################################################
 ccp_check() {
   local n="${1:-0}"
-  # Using AWK record separator = $SEPARATOR
-  # The last push is at NR=2, second to last at NR=4, etc. => NR==(n+1)*2
-  awk -v RS="$SEPARATOR" -v n="$n" 'NR == (n+1)*2 {print $0}' "$FILE"
+  awk -v RS="${SEPARATOR}" -v n="$n" 'NR == (n+1)*2 {print $0}' "$FILE"
 }
 
-# ccp size
-# Displays the total number of elements in the stack.
+###############################################################################
+# ccp size – total number of entries                                          #
+###############################################################################
 ccp_size() {
-  awk -v RS="$SEPARATOR" 'END {print (NR-1)/2}' "$FILE"
+  awk -v RS="${SEPARATOR}" 'END {print (NR-1)/2}' "$FILE"
 }
 
-# ccp clear
-# Clears all content (resets the stack).
+###############################################################################
+# ccp clear – wipe the log completely                                         #
+###############################################################################
 ccp_clear() {
   > "$FILE"
 }
 
-# ccp show
-# Displays the full content of information.txt
+###############################################################################
+# ccp show – print the full README                                            #
+###############################################################################
 ccp_show() {
   cat "$FILE"
 }
 
 ###############################################################################
-# Command Selector                                                            #
+# Command dispatcher                                                          #
 ###############################################################################
 case "$1" in
   push)
@@ -112,8 +127,7 @@ case "$1" in
     ccp_show
     ;;
   *)
-    echo "Usage: $0 {push <text> | pop | send <commit_message> | check [n] | size | clear | show}"
+    echo "Usage: $0 {push <text>|pop|send <msg>|check [n]|size|clear|show}"
     exit 1
     ;;
 esac
-
