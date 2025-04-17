@@ -17,9 +17,18 @@ touch "$FILE"
 # ccp push <text>  
 # Inserts <text> at the FIRST LINE of 'information.txt' (top of the stack).
 ccp_push() {
-  echo -e "\n$SEPARATOR\n$*\n$SEPARATOR\n" | cat - "$FILE" > "$FILE.tmp"
+  # Check if input is coming from a pipe (stdin)
+  if [ ! -t 0 ]; then
+    INPUT=$(cat)
+  else
+    INPUT="$*"
+  fi
+
+  # Prepend the new message to the top of the stack file
+  echo -e "\n$SEPARATOR\n$INPUT\n$SEPARATOR\n" | cat - "$FILE" > "$FILE.tmp"
   mv "$FILE.tmp" "$FILE"
 }
+
 
 # ccp pop
 # Displays and removes the FIRST LINE from the file (the most recent element).
@@ -103,7 +112,7 @@ case "$1" in
     ccp_show
     ;;
   *)
-    echo "Usage: $0 {push <text> | pop | send [message] | check [n] | size | clear | show}"
+    echo "Usage: $0 {push <text> | pop | send <commit_message> | check [n] | size | clear | show}"
     exit 1
     ;;
 esac
