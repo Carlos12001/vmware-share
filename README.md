@@ -1,6 +1,62 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-06-17 15:13:45
+
+```bash
+[cmata@redhat003 double_program_test]$ source run_spi_tb.sh 
+=== Limpiando archivos anteriores ===
+=== Verificando archivos necesarios ===
+=== Compilando diseño SPI con VCS ===
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Tue Jun 17 15:13:12 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'tb_top_spi_original.sv'
+Parsing design file '../../../TEC_RISCV/SPI/top_spi_original.sv'
+Parsing included file '../../../TEC_RISCV/SPI/../SPI/spi.sv'.
+Back to file '../../../TEC_RISCV/SPI/top_spi_original.sv'.
+Parsing design file '../../../TEC_RISCV/SPI/spi.sv'
+
+Error-[MPD] Module previously declared
+  The module was previously declared at: 
+  ../../../TEC_RISCV/SPI/../SPI/spi.sv, 14
+  It is redeclared later at:
+  ../../../TEC_RISCV/SPI/spi.sv, 14: token is 'spi'
+  module spi#(parameter DATA_IN=64, DATA_OUT=32)(CLK, reset, MISO, 
+  data_config, config_enable,data_send, send_data, data_read, MOSI,CS,SCK, 
+  end_send);
+            ^
+  Please remove one of the declarations and compile again.
+
+Parsing design file 'IS25WP032D.v'
+1 warning
+1 error
+CPU time: .199 seconds to compile
+
+=== ERROR EN LA COMPILACIÓN ===
+Revisa los mensajes de error anteriores
+[cmata@redhat003 double_program_test]$ 
+
+```
+
+<!--CCP_SEPARATOR-->
+
 ## 2025-06-17 14:28:16
 
 ```bash
