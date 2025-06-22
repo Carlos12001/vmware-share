@@ -1,6 +1,75 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-06-22 01:26:40
+
+```bash
+[cmata@redhat003 dual_program_test]$ ccp push ======================================
+  Compilando y ejecutando testbench  source ./run_tb_mcb.sh 
+                                     source ./run_tb_mcb.sh 
+======================================
+  Compilando y ejecutando testbench
+  MBC
+======================================
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Sun Jun 22 01:25:47 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'tb_mcb_dual.sv'
+Parsing design file '../../../TEC_RISCV/MBC/MBC_dual.sv'
+Top Level Modules:
+       tb_mcb_dual
+TimeScale is 1 ns / 1 ps
+
+Error-[ICSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 47
+  Illegal combination of structural drivers.
+  Variable spi is driven by multiple structural drivers.
+  This variable is declared at
+  ../../../TEC_RISCV/MBC/MBC_dual.sv, 47: logic spi;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 100: assign spi
+  = (d_pop_g[61:60] == 2'b1);
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 94: assign spi
+  = (d_pop_g[61:60] == 2'b1);
+
+
+Error-[ICSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 48
+  Illegal combination of structural drivers.
+  Variable boot_end is driven by multiple structural drivers.
+  This variable is declared at
+  ../../../TEC_RISCV/MBC/MBC_dual.sv, 48: logic boot_end;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 101: assign 
+  boot_end = (d_pop_g[59:57] == 3'd3);
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 95: assign 
+  boot_end = (d_pop_g[59:57] == 3'd3);
+
+1 warning
+2 errors
+CPU time: .238 seconds to compile
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+bash: ./simv: No such file or directory
+[cmata@redhat003 dual_program_test]$ 
+
+```
+
+<!--CCP_SEPARATOR-->
+
 ## 2025-06-22 01:17:57
 
 ```bash
