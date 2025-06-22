@@ -1,6 +1,305 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-06-22 00:59:28
+
+```bash
+[cmata@redhat003 dual_program_test]$ CC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[cmata@redhat003 dual_program_test]$ source ./run_tb_mcb.sh 
+======================================
+  Compilando y ejecutando testbench
+  MBC
+======================================
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Sun Jun 22 00:57:55 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'tb_mcb_dual.sv'
+Parsing design file '../../../TEC_RISCV/MBC/MBC_dual.sv'
+Top Level Modules:
+       tb_mcb_dual
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+tb_mcb_dual.sv, 77
+tb_mcb_dual, mbc #(.max(::MAX_A)) dut( .clk (clk),  .reset (reset),  .address (address),  .d_write (d_write),  .b (b),  .h (h),  .enable (enable),  .r_w (r_w),  .d_pop (d_pop),  .pndng (pndng),  .q (q),  .sign_ext (sign_ext),  .d_read (d_read),  .a (a),  .d (d),  .d_psh (d_psh),  .psh (psh),  .mem_rdy (mem_rdy),  .pop_mbc (pop_mbc),  .error_drs (error_drs),  .clk_mem (clk_mem),  .cen (cen),  .sl (sl),  .wen (wen));
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Error-[ICPSD] Illegal combination of drivers
+../../../TEC_RISCV/MBC/MBC_dual.sv, 26
+  Illegal combination of structural and procedural drivers.
+  Variable psh is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at ../../../TEC_RISCV/MBC/MBC_dual.sv, 26: logic
+  psh;
+  The first driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 315: 
+  always_comb  begin
+  case (state)
+   ...
+  The second driver is at ../../../TEC_RISCV/MBC/MBC_dual.sv, 90: assign psh
+  = m(psh_i);
+
+
+Note-[MAX_ERROR_COUNT] Maximum error count reached
+  Current number of errors has reached the default maximum error count (10).
+  Please use +error+<count> to increase the limit.
+
+2 warnings
+10 errors
+CPU time: .218 seconds to compile
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+bash: ./simv: No such file or directory
+
+```
+
+<!--CCP_SEPARATOR-->
+
+## 2025-06-22 00:57:30
+
+```bash
+[cmata@redhat003 dual_program_test]$ source ./run_tb_mcb.sh 
+======================================
+  Compilando y ejecutando testbench
+  MBC
+======================================
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Sun Jun 22 00:56:38 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'tb_mcb_dual.sv'
+Parsing design file '../../../TEC_RISCV/MBC/MBC_dual.sv'
+Top Level Modules:
+       tb_mcb_dual
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+tb_mcb_dual.sv, 77
+tb_mcb_dual, mbc
+```
+
+<!--CCP_SEPARATOR-->
+
 ## 2025-06-18 16:38:54
 
 ```bash
