@@ -1,6 +1,52 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-06-22 01:30:09
+
+```bash
+CPU time: .373 seconds to compile + .243 seconds to elab + .210 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Jun 22 01:29 2025
+                5000  MBC0 -> 0
+                5000  MBC1 -> 0
+               25000  core-0  BOOT_DATA
+               45000  MBC0 -> 4
+               45000  MBC1 -> 4
+               55000  MBC0 -> 6
+               55000  MBC1 -> 6
+              145000  core-0  END_BST
+              175000  MBC0 -> 8
+              185000  MBC0 -> 11
+              195000  MBC0 -> 10
+              205000  MBC0 -> 4
+              215000  core-1  BOOT_DATA
+              215000  MBC0 -> 6
+              245000  MBC1 -> 8
+              255000  MBC1 -> 11
+              265000  MBC1 -> 10
+              275000  MBC1 -> 4
+              285000  MBC1 -> 6
+              335000  core-1  END_BST
+              365000  MBC1 -> 8
+              375000  MBC1 -> 11
+              385000  MBC1 -> 10
+              395000  MBC1 -> 4
+              405000  MBC1 -> 6
+              655000  simulation finished
+ called from file tb_mcb_dual.sv, line 148.
+ at simulation time               655000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 655000 ps
+CPU Time:      0.260 seconds;       Data structure size:   0.0Mb
+Sun Jun 22 01:29:17 2025
+[cmata@redhat003 dual_program_test]$ 
+
+```
+
+<!--CCP_SEPARATOR-->
+
 ## 2025-06-22 01:26:40
 
 ```bash
