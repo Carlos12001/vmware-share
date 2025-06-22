@@ -1,6 +1,106 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-06-22 01:17:57
+
+```bash
+======================================
+  Compilando y ejecutando testbench
+  MBC
+======================================
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Sun Jun 22 01:16:59 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'tb_mcb_dual.sv'
+Parsing design file '../../../TEC_RISCV/MBC/MBC_dual.sv'
+Top Level Modules:
+       tb_mcb_dual
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+
+2 modules and 0 UDP read.
+recompiling module tb_mcb_dual
+recompiling module mbc
+Both modules done.
+/mnt/vol_NFS_Pivot/rmolina_installation_files/tools/synopsys/vcs/R-2020.12-SP2/bin/vcs: line 33610: 965617 Segmentation fault      (core dumped) /bin/cfs_ident_exec -f  -o /idents_tapi.xml -o_SrcFile /src_files_c  > tapi_xml_writer.log
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath=''/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/mnt/vol_NFS_Pivot/rmolina_installation_files/tools/synopsys/vcs/R-2020.12-SP2/linux64/lib -L/mnt/vol_NFS_Pivot/rmolina_installation_files/tools/synopsys/vcs/R-2020.12-SP2/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _965460_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o           -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /mnt/vol_NFS_Pivot/rmolina_installation_files/tools/synopsys/vcs/R-2020.12-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /mnt/vol_NFS_Pivot/rmolina_installation_files/tools/synopsys/vcs/R-2020.12-SP2/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .398 seconds to compile + .344 seconds to elab + .200 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Jun 22 01:17 2025
+                5000  MBC0 -> 0
+                5000  MBC1 -> 0
+               25000  core-0  BOOT_DATA
+               45000  MBC0 -> 4
+               45000  MBC1 -> 4
+               55000  MBC0 -> 6
+               55000  MBC1 -> 6
+              145000  core-0  END_BST
+              175000  MBC0 -> 8
+              175000  MBC1 -> 8
+              185000  MBC0 -> 11
+              185000  MBC1 -> 11
+              195000  MBC0 -> 10
+              195000  MBC1 -> 10
+              205000  MBC0 -> 4
+              205000  MBC1 -> 4
+              215000  core-1  BOOT_DATA
+              215000  MBC0 -> 6
+              215000  MBC1 -> 6
+              245000  MBC0 -> 8
+              245000  MBC1 -> 8
+              255000  MBC0 -> 11
+              255000  MBC1 -> 11
+              265000  MBC0 -> 10
+              265000  MBC1 -> 10
+              275000  MBC0 -> 4
+              275000  MBC1 -> 4
+              285000  MBC0 -> 6
+              285000  MBC1 -> 6
+              335000  core-1  END_BST
+              365000  MBC0 -> 8
+              365000  MBC1 -> 8
+              375000  MBC0 -> 11
+              375000  MBC1 -> 11
+              385000  MBC0 -> 10
+              385000  MBC1 -> 10
+              395000  MBC0 -> 4
+              395000  MBC1 -> 4
+              405000  MBC0 -> 6
+              405000  MBC1 -> 6
+              655000  simulation finished
+ called from file tb_mcb_dual.sv, line 148.
+ at simulation time               655000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 655000 ps
+CPU Time:      0.270 seconds;       Data structure size:   0.0Mb
+Sun Jun 22 01:17:01 2025
+[cmata@redhat003 dual_program_test]$ 
+
+```
+
+<!--CCP_SEPARATOR-->
+
 ## 2025-06-22 01:11:05
 
 ```bash
