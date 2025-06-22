@@ -1,6 +1,51 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-06-22 01:11:05
+
+```bash
+[cmata@redhat003 dual_program_test]$ source ./run_tb_mcb.sh 
+======================================
+  Compilando y ejecutando testbench
+  MBC
+======================================
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Sun Jun 22 01:10:32 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file 'tb_mcb_dual.sv'
+
+Error-[SE] Syntax error
+  Following verilog source has syntax error :
+  tb_mcb_dual.sv, 15: token is 'always'
+  always #(CLK_T/2) clk = ~clk;
+        ^
+
+1 warning
+1 error
+CPU time: .140 seconds to compile
+bash: ./simv: No such file or directory
+[cmata@redhat003 dual_program_test]$ 
+
+```
+
+<!--CCP_SEPARATOR-->
+
 ## 2025-06-22 01:07:59
 
 ```bash
