@@ -1,3 +1,14 @@
+## 2025-07-23 14:06:00
+
+```bash
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$' | while read -r p; do
+>   printf ' ? %s\n' "$(printf '%q' "$p")"
+> done
+ ? \"TEC_RISCV/ALU/Nombres\ m\\303\\203\\302\\263dulos\"
+ ? \"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres\ m\\303\\203\\302\\263dulos\"
+ ? \"TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres\ m\\303\\203\\302\\263dulos\"
+[cmata@redhat003 vector_multicore_siwa]$ 
+```
 
 <!--CCP_SEPARATOR-->
 ## 2025-07-23 13:57:00
