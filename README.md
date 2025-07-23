@@ -1,3 +1,207 @@
+## 2025-07-23 14:36:00
+
+```bash
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'   # ? no debe imprimir nada
+"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+[cmata@redhat003 vector_multicore_siwa]$ .git/hooks/pre-commit
+bash: .git/hooks/pre-commit: No such file or directory
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'   # ? no debe imprimir nada
+"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+[cmata@redhat003 vector_multicore_siwa]$ # elimina SOLO del índice (-r: recursivo, --cached: deja los ficheros en tu disco)
+[cmata@redhat003 vector_multicore_siwa]$ git rm -r --cached -- "TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+fatal: pathspec 'TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos' did not match any files
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # confirma el cambio
+[cmata@redhat003 vector_multicore_siwa]$ git commit -m "chore: remove duplicate folder with space/UTF-8 accent (Windows safe)"
+On branch fix/windows-invalid-path
+Your branch is up to date with 'origin/fix/windows-invalid-path'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	TEC_RISCV/BUS/FG_KIT/.synopsys_dc.setup
+	TEC_RISCV/BUS/FG_KIT_GATE_LEVEL/.synopsys_dc.setup
+	TEC_RISCV/BUS/FG_KIT_GATE_LEVEL_EXPERIMENTO/.synopsys_dc.setup
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/csrc/
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/simv
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/ucli.key
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/vcd_file.vcd
+	TEC_RISCV/BUS/POWER_AREA_KIT/.synopsys_dc.setup
+	TEC_RISCV/BUS/POWER_AREA_PARALLEL/.synopsys_dc.setup
+	TEC_RISCV/BUS/POWER_AREA_SERIE/.synopsys_dc.setup
+	TEC_RISCV/BUS/Test_Router/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/FIFO_Latches/.synopsys_dc.setup
+	TEC_RISCV/FIFO_Latches/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/Integration/implement/
+	TEC_RISCV/Interrupt_Handler/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/MBC/dual_program_test/csrc/
+	TEC_RISCV/MBC/dual_program_test/simv
+	TEC_RISCV/MBC/dual_program_test/ucli.key
+	TEC_RISCV/SPI/dual_program_test/csrc/
+	TEC_RISCV/SPI/dual_program_test/simv
+	TEC_RISCV/SPI/dual_program_test/ucli.key
+	TEC_RISCV/SPI/dual_program_test/verdiLog/
+	TEC_RISCV/TOP/DVEfiles/
+	TEC_RISCV/TOP/csrc/
+	TEC_RISCV/TOP/simv
+	TEC_RISCV/TOP/ucli.key
+	TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/
+	TEC_RISCV/TOP_PHY_PR/back_end/libs/
+	TEC_RISCV/TOP_PHY_PR/front_end/libs/
+	TEC_RISCV/TOP_PHY_PR/front_end/source/FIFO_Latches/.synopsys_dc.setup
+	TEC_RISCV/TOP_PHY_PR/front_end/source/FIFO_Latches/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/DVEfiles/
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/csrc/
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/simv
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/ucli.key
+	TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/
+	TEC_RISCV/Top_Phy/front_end/source/FIFO_Latches/.synopsys_dc.setup
+	TEC_RISCV/Top_Phy/front_end/source/FIFO_Latches/.synopsys_dve_rebuild.tcl
+	cleanup_badchar.sh
+	remove_trailing_space.sh
+	test_env/core/.synopsys_dve_rebuild.tcl
+	test_env/core/DVEfiles/
+	test_env/core/csrc/
+	test_env/core/results.txt
+	test_env/core/simv
+	test_env/core/temp.txt
+	test_env/core/ucli.key
+	test_env/core_spi_uart/.synopsys_dve_rebuild.tcl
+	test_env/core_spi_uart/DVEfiles/
+	test_env/core_spi_uart/csrc/
+	test_env/core_spi_uart/results.txt
+	test_env/core_spi_uart/simv
+	test_env/core_spi_uart/temp.txt
+	test_env/core_spi_uart/ucli.key
+	test_env/core_spi_uart/verdiLog/
+	test_env/regression/ALU/DVEfiles/
+	test_env/regression/ALU/csrc/
+	test_env/regression/ALU/dump.vcd
+	test_env/regression/ALU/simv
+	test_env/regression/ALU/ucli.key
+	test_env/uvm_alu/DVEfiles/
+	test_env/uvm_alu/csrc/
+	test_env/uvm_alu/dump.vcd
+	test_env/uvm_alu/simv
+	test_env/uvm_alu/ucli.key
+	test_env/uvm_bus/Ariel_code/DVEfiles/
+	test_env/uvm_bus/Ariel_code/csrc/
+	test_env/uvm_bus/Ariel_code/dump.vcd
+	test_env/uvm_bus/Ariel_code/simv
+	test_env/uvm_bus/Ariel_code/ucli.key
+	test_env/uvm_core/src/csrc/
+	test_env/uvm_core/src/salida.daidir/kdb.elab++/work.lib++/oh.etc/oh.rc
+	test_env/uvm_core/src/salida.daidir/simv.kdb
+	test_env/uvm_core/src/simv
+	test_env/uvm_core/src/tb.vcd
+	test_env/uvm_core/src/ucli.key
+	test_env/uvm_core/src/verdiLog/
+	test_env/uvm_core/support/temp.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ git push
+Everything up-to-date
+[cmata@redhat003 vector_multicore_siwa]$ git rm -r --cached -- "TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres mÃ³dulos" 
+rm 'TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres mÃ³dulos'
+[cmata@redhat003 vector_multicore_siwa]$ git status
+On branch fix/windows-invalid-path
+Your branch is up to date with 'origin/fix/windows-invalid-path'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    "TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	TEC_RISCV/BUS/FG_KIT/.synopsys_dc.setup
+	TEC_RISCV/BUS/FG_KIT_GATE_LEVEL/.synopsys_dc.setup
+	TEC_RISCV/BUS/FG_KIT_GATE_LEVEL_EXPERIMENTO/.synopsys_dc.setup
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/csrc/
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/simv
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/ucli.key
+	TEC_RISCV/BUS/INTERCONNECT_RISCV/vcd_file.vcd
+	TEC_RISCV/BUS/POWER_AREA_KIT/.synopsys_dc.setup
+	TEC_RISCV/BUS/POWER_AREA_PARALLEL/.synopsys_dc.setup
+	TEC_RISCV/BUS/POWER_AREA_SERIE/.synopsys_dc.setup
+	TEC_RISCV/BUS/Test_Router/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/FIFO_Latches/.synopsys_dc.setup
+	TEC_RISCV/FIFO_Latches/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/Integration/implement/
+	TEC_RISCV/Interrupt_Handler/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/MBC/dual_program_test/csrc/
+	TEC_RISCV/MBC/dual_program_test/simv
+	TEC_RISCV/MBC/dual_program_test/ucli.key
+	TEC_RISCV/SPI/dual_program_test/csrc/
+	TEC_RISCV/SPI/dual_program_test/simv
+	TEC_RISCV/SPI/dual_program_test/ucli.key
+	TEC_RISCV/SPI/dual_program_test/verdiLog/
+	TEC_RISCV/TOP/DVEfiles/
+	TEC_RISCV/TOP/csrc/
+	TEC_RISCV/TOP/simv
+	TEC_RISCV/TOP/ucli.key
+	TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/
+	TEC_RISCV/TOP_PHY_PR/back_end/libs/
+	TEC_RISCV/TOP_PHY_PR/front_end/libs/
+	"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+	TEC_RISCV/TOP_PHY_PR/front_end/source/FIFO_Latches/.synopsys_dc.setup
+	TEC_RISCV/TOP_PHY_PR/front_end/source/FIFO_Latches/.synopsys_dve_rebuild.tcl
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/DVEfiles/
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/csrc/
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/simv
+	TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/ucli.key
+	TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/
+	TEC_RISCV/Top_Phy/front_end/source/FIFO_Latches/.synopsys_dc.setup
+	TEC_RISCV/Top_Phy/front_end/source/FIFO_Latches/.synopsys_dve_rebuild.tcl
+	cleanup_badchar.sh
+	remove_trailing_space.sh
+	test_env/core/.synopsys_dve_rebuild.tcl
+	test_env/core/DVEfiles/
+	test_env/core/csrc/
+	test_env/core/results.txt
+	test_env/core/simv
+	test_env/core/temp.txt
+	test_env/core/ucli.key
+	test_env/core_spi_uart/.synopsys_dve_rebuild.tcl
+	test_env/core_spi_uart/DVEfiles/
+	test_env/core_spi_uart/csrc/
+	test_env/core_spi_uart/results.txt
+	test_env/core_spi_uart/simv
+	test_env/core_spi_uart/temp.txt
+	test_env/core_spi_uart/ucli.key
+	test_env/core_spi_uart/verdiLog/
+	test_env/regression/ALU/DVEfiles/
+	test_env/regression/ALU/csrc/
+	test_env/regression/ALU/dump.vcd
+	test_env/regression/ALU/simv
+	test_env/regression/ALU/ucli.key
+	test_env/uvm_alu/DVEfiles/
+	test_env/uvm_alu/csrc/
+	test_env/uvm_alu/dump.vcd
+	test_env/uvm_alu/simv
+	test_env/uvm_alu/ucli.key
+	test_env/uvm_bus/Ariel_code/DVEfiles/
+	test_env/uvm_bus/Ariel_code/csrc/
+	test_env/uvm_bus/Ariel_code/dump.vcd
+	test_env/uvm_bus/Ariel_code/simv
+	test_env/uvm_bus/Ariel_code/ucli.key
+	test_env/uvm_core/src/csrc/
+	test_env/uvm_core/src/salida.daidir/kdb.elab++/work.lib++/oh.etc/oh.rc
+	test_env/uvm_core/src/salida.daidir/simv.kdb
+	test_env/uvm_core/src/simv
+	test_env/uvm_core/src/tb.vcd
+	test_env/uvm_core/src/ucli.key
+	test_env/uvm_core/src/verdiLog/
+	test_env/uvm_core/support/temp.txt
+
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'   # ? no debe imprimir nada
+[cmata@redhat003 vector_multicore_siwa]$ git rm -r --cached -- "TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+fatal: pathspec 'TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos' did not match any files
+[cmata@redhat003 vector_multicore_siwa]$ git rm -r --cached -- "TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres mÃ³dulos" 
+fatal: pathspec 'TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres mÃ³dulos' did not match any files
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'   # ? no debe imprimir nada
+[cmata@redhat003 vector_multicore_siwa]$ 
+```
+
 ## 2025-07-23 14:22:00
 
 ```bash
