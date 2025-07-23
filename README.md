@@ -1,3 +1,53 @@
+## 2025-07-23 14:22:00
+
+```bash
+ mode 100644 test_env/uvm_core/src/simv.daidir/vce.sdb
+ delete mode 100755 test_env/uvm_core/src/simv.daidir/vcs_rebuild
+ delete mode 100644 test_env/uvm_core/src/simv.daidir/vcselab_master_hsim_virtintf_info.dat
+ delete mode 100644 test_env/uvm_core/src/simv.daidir/vcselab_misc_hsim_merge.sdb
+ delete mode 100644 test_env/uvm_core/src/simv.daidir/vcselab_misc_tCEYNb
+ delete mode 100644 test_env/uvm_core/src/simv.daidir/vcselab_misc_vpdnodenums
+ delete mode 100644 test_env/uvm_core/src/verdi_config_file
+ delete mode 100644 test_env/uvm_core/support/temp.txt
+[cmata@redhat003 vector_multicore_siwa]$ git push
+Enumerating objects: 45, done.
+Counting objects: 100% (45/45), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (23/23), 1.80 KiB | 264.00 KiB/s, done.
+Total 23 (delta 20), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (20/20), completed with 20 local objects.
+To github.com:rmolina44tec/vector_multicore_siwa.git
+   06278e7..920c533  fix/windows-invalid-path -> fix/windows-invalid-path
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ git status
+On branch fix/windows-invalid-path
+Your branch is up to date with 'origin/fix/windows-invalid-path'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   test_env/core_spi_uart/.fsm.sch.verilog.xml
+	modified:   test_env/core_spi_uart/Metrics_Reports/Metrics_Report_test.txt
+	modified:   test_env/core_spi_uart/mem_model.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	cleanup_badchar.sh
+	remove_trailing_space.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[cmata@redhat003 vector_multicore_siwa]$ # A) ¿se sigue trackeando algo que esté ignorado?  -> debe quedar vacío
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files -ci --exclude-standard
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # B) ¿existe alguna ruta con espacio o ':' al final? -> vacío también
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'
+"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+[cmata@redhat003 vector_multicore_siwa]$ git mv "TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres mÃ³dulos" TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres_modulos
+fatal: destination exists, source=TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres mÃ³dulos, destination=TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres_modulos
+[cmata@redhat003 vector_multicore_siwa]$ 
+```
+
 ## 2025-07-23 14:09:00
 
 ``` bash
