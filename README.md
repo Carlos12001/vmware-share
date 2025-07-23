@@ -1,6 +1,123 @@
 
 <!--CCP_SEPARATOR-->
 
+## 2025-07-23 13:39:00
+
+```bash
+ata@redhat003 vector_multicore_siwa]$ vim .gitignore 
+[cmata@redhat003 vector_multicore_siwa]$ # Añade el .gitignore al índice
+[cmata@redhat003 vector_multicore_siwa]$ git add .gitignore
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # Saca del tracking TODO lo que ahora coincida con el .gitignore
+[cmata@redhat003 vector_multicore_siwa]$ git rm -r --cached $(git ls-files -i --exclude-standard)
+fatal: ls-files -i must be used with either -o or -c
+fatal: No pathspec was given. Which files should I remove?
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # Confirma la limpieza
+[cmata@redhat003 vector_multicore_siwa]$ git commit -m "Add global Synopsys .gitignore; stop tracking generated artifacts"
+[fix/windows-invalid-path 747ac39] Add global Synopsys .gitignore; stop tracking generated artifacts
+ 1 file changed, 63 insertions(+), 12 deletions(-)
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # Sube cambios
+[cmata@redhat003 vector_multicore_siwa]$ git push -u origin HEAD   # (o la rama donde estés)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 820 bytes | 164.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:rmolina44tec/vector_multicore_siwa.git
+   7bec3f2..747ac39  HEAD -> fix/windows-invalid-path
+branch 'fix/windows-invalid-path' set up to track 'origin/fix/windows-invalid-path'.
+[cmata@redhat003 vector_multicore_siwa]$ # No debería mostrar artefactos nuevos
+[cmata@redhat003 vector_multicore_siwa]$ git status
+
+On branch fix/windows-invalid-path
+Your branch is up to date with 'origin/fix/windows-invalid-path'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   test_env/core_spi_uart/.fsm.sch.verilog.xml
+	modified:   test_env/core_spi_uart/Metrics_Reports/Metrics_Report_test.txt
+	modified:   test_env/core_spi_uart/mem_model.txt
+	modified:   test_env/core_spi_uart/novas.conf
+	modified:   test_env/core_spi_uart/novas.rc
+	modified:   test_env/core_spi_uart/results.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	TEC_RISCV/MBC/dual_program_test/csrc/
+	TEC_RISCV/MBC/dual_program_test/simv
+	TEC_RISCV/MBC/dual_program_test/simv.daidir/
+	TEC_RISCV/MBC/dual_program_test/verdi_config_file
+	TEC_RISCV/SPI/dual_program_test/csrc/
+	TEC_RISCV/SPI/dual_program_test/novas.conf
+	TEC_RISCV/SPI/dual_program_test/simv
+	TEC_RISCV/SPI/dual_program_test/simv.daidir/
+	TEC_RISCV/SPI/dual_program_test/verdi_config_file
+	cleanup_badchar.sh
+	remove_trailing_space.sh
+	test_env/core_spi_uart/csrc/
+	test_env/core_spi_uart/simv
+	test_env/core_spi_uart/simv.daidir/
+	test_env/core_spi_uart/simv.vdb/
+	test_env/core_spi_uart/temp.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # Asegúrate de que no queden archivos Milkyway ni .vpd/.fsdb en el historial actual
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E '\.mw/|\.vpd$|\.fsdb$' || echo "??  Sin artefactos restantes"
+TEC_RISCV/FIFO_Latches/inter.vpd
+TEC_RISCV/MMU/resultados/mem_inside/be/db/be/CMB/CMB.mw/.lock
+TEC_RISCV/MMU/resultados/mem_inside/be/db/be/CMB/CMB.mw/lib
+TEC_RISCV/MMU/resultados/mem_inside/be/db/be/CMB/CMB.mw/lib_1
+TEC_RISCV/MMU/resultados/mem_inside/be/db/be/CMB/CMB.mw/lib_bck
+TEC_RISCV/MMU/resultados/mem_outside/be/db/be/controlador/controlador.mw/.lock
+TEC_RISCV/MMU/resultados/mem_outside/be/db/be/controlador/controlador.mw/lib
+TEC_RISCV/MMU/resultados/mem_outside/be/db/be/controlador/controlador.mw/lib_1
+TEC_RISCV/MMU/resultados/mem_outside/be/db/be/controlador/controlador.mw/lib_bck
+TEC_RISCV/TOP/inter.vpd
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/.lock
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_1
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_2
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_3
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_4
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_5
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_6
+TEC_RISCV/TOP_PHY_PR/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_bck
+TEC_RISCV/TOP_PHY_PR/back_end/libs/Tec_Riscv_pads.mw/.lock
+TEC_RISCV/TOP_PHY_PR/back_end/libs/Tec_Riscv_pads.mw/lib
+TEC_RISCV/TOP_PHY_PR/back_end/libs/Tec_Riscv_pads.mw/lib_1
+TEC_RISCV/TOP_PHY_PR/back_end/libs/Tec_Riscv_pads.mw/lib_bck
+TEC_RISCV/TOP_PHY_PR/front_end/libs/Tec_Riscv_pads.mw/.lock
+TEC_RISCV/TOP_PHY_PR/front_end/libs/Tec_Riscv_pads.mw/lib
+TEC_RISCV/TOP_PHY_PR/front_end/libs/Tec_Riscv_pads.mw/lib_1
+TEC_RISCV/TOP_PHY_PR/front_end/libs/Tec_Riscv_pads.mw/lib_bck
+TEC_RISCV/TOP_PHY_PR/front_end/source/FIFO_Latches/inter.vpd
+TEC_RISCV/TOP_PHY_PR/front_end/source/TOP/inter.vpd
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/.lock
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_1
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_2
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_3
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_4
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_5
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_6
+TEC_RISCV/Top_Phy/back_end/db/XSPRAMLP_2048X32_M8P_UPF_typ_1_80V_25C.mw/lib_bck
+TEC_RISCV/Top_Phy/front_end/source/FIFO_Latches/inter.vpd
+test_env/core/inter.vpd
+test_env/core_spi_uart/inter.vpd
+test_env/regression/ALU/dump.vcd.vpd
+test_env/uvm_alu/inter.vpd
+test_env/uvm_bus/Ariel_code/dump.vcd.vpd
+test_env/uvm_core/src/inter_1.fsdb
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ 
+```
+
 ## 2025-07-23 13:09:03
 
 ```bash
