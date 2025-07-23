@@ -1,3 +1,101 @@
+## 2025-07-23 14:57:00
+
+```bash
+cmata@redhat003 vector_multicore_siwa]$ git log --oneline
+95bfa6f (HEAD -> clean-main) initial clean snapshot
+[cmata@redhat003 vector_multicore_siwa]$ git count-objects -vH
+count: 1112
+size: 4.45 MiB
+in-pack: 12840
+packs: 3
+size-pack: 1007.09 MiB
+prune-packable: 4
+garbage: 0
+size-garbage: 0 bytes
+[cmata@redhat003 vector_multicore_siwa]$ git verify-pack -v .git/objects/pack/*.idx | sort -k3nr | head
+
+961815c2061e3d9805944bd26f77dbb2c3ec98ca blob   64941337 1741786 1022303982
+cc8d9939811694539098e27c67adbb358389c46d blob   45785586 2389564 52716213
+c01ffc6bb5a5723439342b58792d581b24835a40 blob   45776528 2390659 55129496
+e58b2646cbd05ddae5fb743a4b2e7c01459c4e38 blob   42938338 430322 717189555
+1093c1d367a548e9488ab59d7db1b0e9b1a4c532 blob   38168354 4466049 66574496
+22f603f20c378d76d98d27100646984ecd5436ca blob   25090050 6127779 113804608
+d3b07c1e82771d74b2254204513f9412b6a8c306 blob   24898300 6118907 119932387
+71790ba400929ae30b9c3f0fa2bfae5b312e5299 blob   24392296 9478075 558675349
+be97ef19c0a8eced2ba1937d7e8e7f9be3e2caae blob   24372783 9469431 506927271
+3609b0576480ea26faa0aa67a4842cb30b0412d9 blob   24315277 668038 716498256
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | egrep -i '.(mw'
+grep: Unmatched ( or \(
+[cmata@redhat003 vector_multicore_siwa]$ test -x .git/hooks/pre-commit && echo
+[cmata@redhat003 vector_multicore_siwa]$ # estando en clean-main
+[cmata@redhat003 vector_multicore_siwa]$ git log --stat        # confirma que sólo hay 1 commit
+commit 95bfa6ffea183e19d49e4060d6801ae909c7828a (HEAD -> clean-main)
+Author: Carlos12001 <carlos.andres12001@gmail.com>
+Date:   Wed Jul 23 14:51:04 2025 -0600
+
+    initial clean snapshot
+
+ .gitignore                                                                       |    108 +
+ README.md                                                                        |      2 +
+ TEC_RISCV/ALU/ALU.v                                                              |    197 +
+ TEC_RISCV/ALU/ALU_2.sv                                                           |    196 +
+ TEC_RISCV/ALU/ALU_Library.sv                                                     |    386 +
+ TEC_RISCV/ALU/ALU_tb.v                                                           |    178 +
+ TEC_RISCV/ALU/Barrel_Shifter.sv                                                  |    175 +
+ TEC_RISCV/ALU/CSA4.sv                                                            |     21 +
+ TEC_RISCV/ALU/CSK_sin_mux.sv                                                     |     61 +
+ TEC_RISCV/ALU/Informe_ALU.pdf                                                    |    Bin 0 -> 435155 bytes
+ TEC_RISCV/ALU/Manchester_carry_chain.sv                                          |     61 +
+ TEC_RISCV/ALU/VCSA.sv                                                            |     88 +
+ TEC_RISCV/ALU/barrel_tb.sv                                                       |    127 +
+ TEC_RISCV/ALU/carry_skip_adder.sv                                                |     61 +
+ TEC_RISCV/ALU/csk_bloque.sv                                                      |     17 +
+ TEC_RISCV/ALU/test_ALU_2.sv                                                      |    177 +
+ TEC_RISCV/ALU/test_VCSA.sv                                                       |     57 +
+ TEC_RISCV/ALU/test_adder_sin_mux.sv                                              |     68 +
+ TEC_RISCV/ALU/test_adders.sv                                                     |     57 +
+ TEC_RISCV/ALU/test_cadena.sv                                                     |     57 +
+ TEC_RISCV/ALU/test_top.sv                                                        |    170 +
+ TEC_RISCV/ALU/top.sv                                                             |    139 +
+ TEC_RISCV/AXI_Interface/Design_srcs/AXI_Int.sv                                   |    102 +
+ TEC_RISCV/AXI_Interface/Design_srcs/AXI_Ports.sv                                 |     42 +
+ TEC_RISCV/AXI_Interface/Design_srcs/C_Escrituras.sv                              |    141 +
+ TEC_RISCV/AXI_Interface/Design_srcs/C_Lecturas.sv                                |    129 +
+ TEC_RISCV/AXI_Interface/Design_srcs/FIFO_E.sv                                    |     60 +
+...skipping...
+Author: Carlos12001 <carlos.andres12001@gmail.com>
+Date:   Wed Jul 23 14:51:04 2025 -0600
+
+    initial clean snapshot
+
+ .gitignore                                                                       |    108 +
+ README.md                                                                        |      2 +
+ TEC_RISCV/ALU/ALU.v                                                              |    197 +
+ TEC_RISCV/ALU/ALU_2.sv                                                           |    196 +
+ TEC_RISCV/ALU/ALU_Library.sv                                                     |    386 +
+ TEC_RISCV/ALU/ALU_tb.v                                                           |    178 +
+ TEC_RISCV/ALU/Barrel_Shifter.sv                                                  |    175 +
+ TEC_RISCV/ALU/CSA4.sv                                                            |     21 +
+ TEC_RISCV/ALU/CSK_sin_mux.sv                                                     |     61 +
+ TEC_RISCV/ALU/Informe_ALU.pdf                                                    |    Bin 0 -> 435155 bytes
+ TEC_RISCV/ALU/Manchester_carry_chain.sv                                          |     61 +
+ TEC_RISCV/ALU/VCSA.sv                                                            |     88 +
+ TEC_RISCV/ALU/barrel_tb.sv                                                       |    127 +
+ TEC_RISCV/ALU/carry_skip_adder.sv                                                |     61 +
+ TEC_RISCV/ALU/csk_bloque.sv                                                      |     17 +
+ TEC_RISCV/ALU/test_ALU_2.sv                                                      |    177 +
+ TEC_RISCV/ALU/test_VCSA.sv                                                       |     57 +
+ TEC_RISCV/ALU/test_adder_sin_mux.sv                                              |     68 +
+ TEC_RISCV/ALU/test_adders.sv                                                     |     57 +
+ TEC_RISCV/ALU/test_cadena.sv                                                     |     57 +
+ TEC_RISCV/ALU/test_top.sv                                                        |    170 +
+ TEC_RISCV/ALU/top.sv                                                             |    139 +
+ TEC_RISCV/AXI_Interface/Design_srcs/AXI_Int.sv                                   |    102 +
+ TEC_RISCV/AXI_Interface/Design_srcs/AXI_Ports.sv                                 |     42 +
+ TEC_RISCV/AXI_Interface/Design_srcs/C_Escrituras.sv                              |    141 +
+ TEC_RISCV/AXI_Interface/Design_srcs/C_Lecturas.sv                                |    129 +
+```
 ## 2025-07-23 14:43:00
 
 ```bash
