@@ -1,3 +1,76 @@
+## 2025-07-23 14:09:00
+
+``` bash
+cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$' | while read -r p; do
+>   printf ' ? %s\n' "$(printf '%q' "$p")"
+> done
+ ? \"TEC_RISCV/ALU/Nombres\ m\\303\\203\\302\\263dulos\"
+ ? \"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres\ m\\303\\203\\302\\263dulos\"
+ ? \"TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres\ m\\303\\203\\302\\263dulos\"
+[cmata@redhat003 vector_multicore_siwa]$ git mv TEC_RISCV/ALU/Nombres\ mÃ³dulos TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres_modulos
+[cmata@redhat003 vector_multicore_siwa]$ git mv TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres\ mÃ³dulos        TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres_modulos
+[cmata@redhat003 vector_multicore_siwa]$ git status   # debería mostrar los tres R 100% ?  Nombres_modulos
+On branch fix/windows-invalid-path
+Your branch is up to date with 'origin/fix/windows-invalid-path'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	renamed:    "TEC_RISCV/ALU/Nombres m\303\203\302\263dulos" -> TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres_modulos
+	renamed:    "TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres m\303\203\302\263dulos" -> TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres_modulos
+	renamed:    test_env/uvm_core/support/HOLA MUNDO -> test_env/uvm_core/support/HOLA_MUNDO
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   test_env/core_spi_uart/.fsm.sch.verilog.xml
+	modified:   test_env/core_spi_uart/Metrics_Reports/Metrics_Report_test.txt
+	modified:   test_env/core_spi_uart/mem_model.txt
+	modified:   test_env/core_spi_uart/novas.conf
+	modified:   test_env/core_spi_uart/results.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	TEC_RISCV/MBC/dual_program_test/csrc/
+	TEC_RISCV/MBC/dual_program_test/simv
+	TEC_RISCV/MBC/dual_program_test/simv.daidir/
+	TEC_RISCV/MBC/dual_program_test/verdi_config_file
+	TEC_RISCV/SPI/dual_program_test/csrc/
+	TEC_RISCV/SPI/dual_program_test/novas.conf
+	TEC_RISCV/SPI/dual_program_test/simv
+	TEC_RISCV/SPI/dual_program_test/simv.daidir/
+	TEC_RISCV/SPI/dual_program_test/verdi_config_file
+	cleanup_badchar.sh
+	remove_trailing_space.sh
+	test_env/core_spi_uart/csrc/
+	test_env/core_spi_uart/simv
+	test_env/core_spi_uart/simv.daidir/
+	test_env/core_spi_uart/temp.txt
+
+[cmata@redhat003 vector_multicore_siwa]$ git commit -m "Rename last paths: remove space/UTF-8 accent (Windows safe)"
+[fix/windows-invalid-path 20c0ebe] Rename last paths: remove space/UTF-8 accent (Windows safe)
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ rename "TEC_RISCV/ALU/Nombres m\303\203\302\263dulos" => TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres_modulos (100%)
+ rename "TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres m\303\203\302\263dulos" => TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres_modulos (100%)
+ rename test_env/uvm_core/support/{HOLA MUNDO => HOLA_MUNDO} (100%)
+[cmata@redhat003 vector_multicore_siwa]$ git push
+Enumerating objects: 27, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (15/15), 2.09 KiB | 142.00 KiB/s, done.
+Total 15 (delta 12), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (12/12), completed with 11 local objects.
+To github.com:rmolina44tec/vector_multicore_siwa.git
+   d1fe669..20c0ebe  fix/windows-invalid-path -> fix/windows-invalid-path
+[cmata@redhat003 vector_multicore_siwa]$ # A) Nada trackeado que esté ahora en .gitignore
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files -ci --exclude-standard
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # B) Ninguna ruta con espacio o ':' al final
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'
+"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+[cmata@redhat003 vector_multicore_siwa]$ 
+```
+
 ## 2025-07-23 14:06:00
 
 ```bash
