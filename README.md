@@ -1,5 +1,355 @@
 
 <!--CCP_SEPARATOR-->
+## 2025-07-23 13:57:00
+```bash
+mata@redhat003 vector_multicore_siwa]$ # 1. ¿Queda algo trackeado que ahora esté ignorado?
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files -ci --exclude-standard  # ? debería imprimir nada
+TEC_RISCV/MMU/resultados/mem_outside/be/source/controlador.saif
+TEC_RISCV/MMU/resultados/mem_outside/fe/sources/controlador.saif
+test_env/regression/ALU/simv.vdb/.cmoptions
+test_env/regression/ALU/simv.vdb/.mode64
+test_env/regression/ALU/simv.vdb/.vdb_version
+test_env/regression/ALU/simv.vdb/snps/coverage/db/.cm_totalPaths
+test_env/regression/ALU/simv.vdb/snps/coverage/db/auxiliary/dve_debug.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/auxiliary/verilog.instance_parameters.txt
+test_env/regression/ALU/simv.vdb/snps/coverage/db/auxiliary/verilog.sourceinfo.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/design/verilog.design.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/assert.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/branch.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/cond.verilog.exclude.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/cond.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/fsm.verilog.exclude.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/fsm.verilog.generated_config.txt
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/fsm.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/line.verilog.exclude.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/line.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/path.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/shape/tgl.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.apc.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.data.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.shape.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/branch.verilog.data.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/cond.verilog.data.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/fsm.verilog.data.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/line.verilog.data.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/siminfo.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/testbench.cumulative.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/testbench.inst.xml
+test_env/regression/ALU/simv.vdb/snps/coverage/db/testdata/test/tgl.verilog.data.xml
+test_env/uvm_alu/simv.vdb/.cmoptions
+test_env/uvm_alu/simv.vdb/.mode64
+test_env/uvm_alu/simv.vdb/.vdb_version
+test_env/uvm_alu/simv.vdb/snps/coverage/db/.cm_totalPaths
+test_env/uvm_alu/simv.vdb/snps/coverage/db/auxiliary/dve_debug.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/auxiliary/verilog.instance_parameters.txt
+test_env/uvm_alu/simv.vdb/snps/coverage/db/auxiliary/verilog.sourceinfo.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/design/verilog.design.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/shape/assert.verilog.shape.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/shape/cond.verilog.exclude.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/shape/fsm.verilog.exclude.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/shape/fsm.verilog.generated_config.txt
+test_env/uvm_alu/simv.vdb/snps/coverage/db/shape/line.verilog.exclude.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/shape/line.verilog.shape.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.data.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.shape.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/testdata/test/line.verilog.data.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/testdata/test/siminfo.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/testdata/test/testbench.cumulative.xml
+test_env/uvm_alu/simv.vdb/snps/coverage/db/testdata/test/testbench.inst.xml
+test_env/uvm_core/src/salida.vdb/.cmoptions
+test_env/uvm_core/src/salida.vdb/.mode64
+test_env/uvm_core/src/salida.vdb/.vdb_version
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/auxiliary/dve_debug.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/auxiliary/vcmArguments.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/auxiliary/verilog.instance_parameters.txt
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/auxiliary/verilog.sourceinfo.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/common/assert.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/design/verilog.compact_hier_file.txt
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/design/verilog.design.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/assert.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/branch.verilog.exclude.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/branch.verilog.info.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/branch.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/cond.verilog.exclude.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/cond.verilog.info.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/cond.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/fsm.verilog.exclude.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/fsm.verilog.generated_config.txt
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/fsm.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/line.verilog.exclude.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/line.verilog.info.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/line.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/tgl.verilog.info.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/shape/tgl.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/assert.verilog.apc.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/assert.verilog.data.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/assert.verilog.shape.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/branch.verilog.data.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/cond.verilog.data.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/fsm.verilog.data.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/line.verilog.data.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/siminfo.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/testbench.cumulative.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/testbench.inst.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/tgl.verilog.data.xml
+test_env/uvm_core/src/salida.vdb/snps/coverage/db/testdata/test/vcmArguments.xml
+test_env/uvm_core/src/simv.vdb/.cmoptions
+test_env/uvm_core/src/simv.vdb/.mode64
+test_env/uvm_core/src/simv.vdb/.vdb_version
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/auxiliary/dve_debug.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/auxiliary/vcmArguments.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/auxiliary/verilog.instance_parameters.txt
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/auxiliary/verilog.sourceinfo.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/common/assert.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/design/verilog.compact_hier_file.txt
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/design/verilog.design.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/assert.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/branch.verilog.exclude.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/branch.verilog.info.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/branch.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/cond.verilog.exclude.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/cond.verilog.info.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/cond.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/fsm.verilog.exclude.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/fsm.verilog.generated_config.txt
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/fsm.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/line.verilog.exclude.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/line.verilog.info.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/line.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/tgl.verilog.info.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/shape/tgl.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.data.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/testdata/test/assert.verilog.shape.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/testdata/test/siminfo.xml
+test_env/uvm_core/src/simv.vdb/snps/coverage/db/testdata/test/vcmArguments.xml
+[cmata@redhat003 vector_multicore_siwa]$ 
+[cmata@redhat003 vector_multicore_siwa]$ # 2. ¿Alguna ruta con caracteres ilegales para Windows?
+[cmata@redhat003 vector_multicore_siwa]$ git ls-files | grep -E ' |:$'        # ? tampoco debería imprimir
+"TEC_RISCV/ALU/Nombres m\303\203\302\263dulos"
+"TEC_RISCV/TOP_PHY_PR/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+"TEC_RISCV/Top_Phy/front_end/source/ALU/Nombres m\303\203\302\263dulos"
+test_env/uvm_core/support/HOLA MUNDO
+test_env/uvm_core/support/Package Control/1_reloader.py
+test_env/uvm_core/support/Package Control/2_bootstrap.py
+test_env/uvm_core/support/Package Control/Default.sublime-commands
+test_env/uvm_core/support/Package Control/Main.sublime-menu
+test_env/uvm_core/support/Package Control/Package Control.py
+test_env/uvm_core/support/Package Control/Package Control.sublime-settings
+test_env/uvm_core/support/Package Control/dependencies.json
+test_env/uvm_core/support/Package Control/example-channel.json
+test_env/uvm_core/support/Package Control/example-dependencies.json
+test_env/uvm_core/support/Package Control/example-messages.json
+test_env/uvm_core/support/Package Control/example-repository.json
+test_env/uvm_core/support/Package Control/messages.json
+test_env/uvm_core/support/Package Control/messages/1.3.0.txt
+test_env/uvm_core/support/Package Control/messages/1.6.0.txt
+test_env/uvm_core/support/Package Control/messages/2.0.0.txt
+test_env/uvm_core/support/Package Control/messages/3.0.0.txt
+test_env/uvm_core/support/Package Control/messages/3.1.0.txt
+test_env/uvm_core/support/Package Control/messages/3.2.0.txt
+test_env/uvm_core/support/Package Control/messages/3.4.0.txt
+test_env/uvm_core/support/Package Control/package-metadata.json
+test_env/uvm_core/support/Package Control/package_control/__init__.py
+test_env/uvm_core/support/Package Control/package_control/automatic_upgrader.py
+test_env/uvm_core/support/Package Control/package_control/bootstrap.py
+test_env/uvm_core/support/Package Control/package_control/ca_certs.py
+test_env/uvm_core/support/Package Control/package_control/cache.py
+test_env/uvm_core/support/Package Control/package_control/clear_directory.py
+test_env/uvm_core/support/Package Control/package_control/clients/__init__.py
+test_env/uvm_core/support/Package Control/package_control/clients/bitbucket_client.py
+test_env/uvm_core/support/Package Control/package_control/clients/client_exception.py
+test_env/uvm_core/support/Package Control/package_control/clients/github_client.py
+test_env/uvm_core/support/Package Control/package_control/clients/gitlab_client.py
+test_env/uvm_core/support/Package Control/package_control/clients/json_api_client.py
+test_env/uvm_core/support/Package Control/package_control/clients/readme_client.py
+test_env/uvm_core/support/Package Control/package_control/cmd.py
+test_env/uvm_core/support/Package Control/package_control/commands/__init__.py
+test_env/uvm_core/support/Package Control/package_control/commands/add_channel_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/add_repository_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/advanced_install_package_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/create_package_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/disable_package_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/discover_packages_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/enable_package_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/existing_packages_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/install_local_dependency_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/install_package_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/list_packages_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/list_unmanaged_packages_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_disable_debug_mode_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_edit_settings_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_enable_debug_mode_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_insert_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_open_default_settings_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_open_user_settings_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/package_control_tests_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/remove_channel_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/remove_package_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/remove_repository_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/satisfy_dependencies_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/upgrade_all_packages_command.py
+test_env/uvm_core/support/Package Control/package_control/commands/upgrade_package_command.py
+test_env/uvm_core/support/Package Control/package_control/console_write.py
+test_env/uvm_core/support/Package Control/package_control/deps/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_errors.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_inet.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_int.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_iri.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_ordereddict.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_teletex_codec.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/_types.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/algos.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/cms.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/core.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/crl.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/csr.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/keys.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/ocsp.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/parser.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/pdf.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/pem.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/pkcs12.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/tsp.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/util.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/version.py
+test_env/uvm_core/support/Package Control/package_control/deps/asn1crypto/x509.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_asn1.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_asymmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_cipher_suites.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_ecdsa.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_errors.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_ffi.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_int.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_linux_bsd/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_linux_bsd/trust_list.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/_common_crypto.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/_common_crypto_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/_core_foundation.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/_core_foundation_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/_security.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/_security_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/asymmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/symmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/tls.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/trust_list.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_mac/util.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/_libcrypto.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/_libcrypto_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/_libssl.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/_libssl_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/asymmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/symmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/tls.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_openssl/util.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_pkcs1.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_pkcs12.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_pkcs5.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_rand.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_tls.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_types.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/__init__.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_advapi32.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_advapi32_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_cng.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_cng_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_crypt32.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_crypt32_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_decode.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_kernel32.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_kernel32_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_secur32.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/_secur32_ctypes.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/asymmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/symmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/tls.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/trust_list.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/_win/util.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/asymmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/errors.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/kdf.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/keys.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/symmetric.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/tls.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/trust_list.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/util.py
+test_env/uvm_core/support/Package Control/package_control/deps/oscrypto/version.py
+test_env/uvm_core/support/Package Control/package_control/download_manager.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/__init__.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/background_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/binary_not_found_error.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/caching_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/cli_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/curl_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/decoding_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/downloader_exception.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/http_error.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/limiting_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/non_clean_exit_error.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/non_http_error.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/oscrypto_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/oscrypto_downloader_exception.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/rate_limit_exception.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/urllib_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/wget_downloader.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/win_downloader_exception.py
+test_env/uvm_core/support/Package Control/package_control/downloaders/wininet_downloader.py
+test_env/uvm_core/support/Package Control/package_control/events.py
+test_env/uvm_core/support/Package Control/package_control/file_not_found_error.py
+test_env/uvm_core/support/Package Control/package_control/http/__init__.py
+test_env/uvm_core/support/Package Control/package_control/http/debuggable_http_connection.py
+test_env/uvm_core/support/Package Control/package_control/http/debuggable_http_handler.py
+test_env/uvm_core/support/Package Control/package_control/http/debuggable_http_response.py
+test_env/uvm_core/support/Package Control/package_control/http/debuggable_https_response.py
+test_env/uvm_core/support/Package Control/package_control/http/invalid_certificate_exception.py
+test_env/uvm_core/support/Package Control/package_control/http/persistent_handler.py
+test_env/uvm_core/support/Package Control/package_control/http/validating_https_connection.py
+test_env/uvm_core/support/Package Control/package_control/http/validating_https_handler.py
+test_env/uvm_core/support/Package Control/package_control/http_cache.py
+test_env/uvm_core/support/Package Control/package_control/loader.py
+test_env/uvm_core/support/Package Control/package_control/open_compat.py
+test_env/uvm_core/support/Package Control/package_control/package_cleanup.py
+test_env/uvm_core/support/Package Control/package_control/package_creator.py
+test_env/uvm_core/support/Package Control/package_control/package_disabler.py
+test_env/uvm_core/support/Package Control/package_control/package_installer.py
+test_env/uvm_core/support/Package Control/package_control/package_io.py
+test_env/uvm_core/support/Package Control/package_control/package_manager.py
+test_env/uvm_core/support/Package Control/package_control/package_renamer.py
+test_env/uvm_core/support/Package Control/package_control/processes.py
+test_env/uvm_core/support/Package Control/package_control/providers/__init__.py
+test_env/uvm_core/support/Package Control/package_control/providers/bitbucket_repository_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/channel_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/github_repository_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/github_user_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/gitlab_repository_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/gitlab_user_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/provider_exception.py
+test_env/uvm_core/support/Package Control/package_control/providers/release_selector.py
+test_env/uvm_core/support/Package Control/package_control/providers/repository_provider.py
+test_env/uvm_core/support/Package Control/package_control/providers/schema_compat.py
+test_env/uvm_core/support/Package Control/package_control/semver.py
+test_env/uvm_core/support/Package Control/package_control/settings.py
+test_env/uvm_core/support/Package Control/package_control/show_error.py
+test_env/uvm_core/support/Package Control/package_control/show_quick_panel.py
+test_env/uvm_core/support/Package Control/package_control/sys_path.py
+test_env/uvm_core/support/Package Control/package_control/tests/__init__.py
+test_env/uvm_core/support/Package Control/package_control/tests/clients.py
+test_env/uvm_core/support/Package Control/package_control/tests/providers.py
+test_env/uvm_core/support/Package Control/package_control/text.py
+test_env/uvm_core/support/Package Control/package_control/thread_progress.py
+test_env/uvm_core/support/Package Control/package_control/unicode.py
+test_env/uvm_core/support/Package Control/package_control/upgraders/__init__.py
+test_env/uvm_core/support/Package Control/package_control/upgraders/git_upgrader.py
+test_env/uvm_core/support/Package Control/package_control/upgraders/hg_upgrader.py
+test_env/uvm_core/support/Package Control/package_control/upgraders/vcs_upgrader.py
+test_env/uvm_core/support/Package Control/package_control/versions.py
+test_env/uvm_core/support/Package Control/readme.md
+[cmata@redhat003 vector_multicore_siwa]$ 
+```
+
 
 ## 2025-07-23 13:39:00
 
